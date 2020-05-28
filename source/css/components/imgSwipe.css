@@ -1,0 +1,30 @@
+.img-swipe{
+  width: 100%;
+  height: auto;
+}
+.img-swipe img{
+  width: 100%;
+  height: 280px;
+  position: relative;
+  z-index: 1;
+}
+.img-swipe .img-swipe-info-box{
+  width: 80%;
+  height: 50px;
+  position: relative;
+  float: left;
+  bottom: 90px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  display: flex;
+}
+.img-swipe .img-swipe-info-box div span{
+  color: #ffffff;
+  font-size: 20px;
+}
+.img-swipe .img-swipe-info-box div p{
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 5px;
+}

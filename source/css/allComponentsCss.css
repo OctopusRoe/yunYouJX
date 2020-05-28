@@ -1,0 +1,17 @@
+/* 引入search组件样式 */
+@import './components/search.css';
+/* 引入titleNav组件样式 */
+@import './components/titleNav.css';
+/* 引入mainNav组件样式 */
+@import './components/mainNav.css';
+/* 引入scenicCard组件样式 */
+@import './components/scenicCard.css';
+/* 引入smallTag组件样式 */
+@import './components/smallTag.css';
+/* 引入 pageOne 页面样式 */
+@import './pages/pageOne.css';
+
+/* 引入imgSwipe组件样式 */
+@import './components/imgSwipe.css';
+/* 引入 positionInfoPage 页面样式 */
+@import './pages/positionInfoPage.css';

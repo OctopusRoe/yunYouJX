@@ -1,0 +1,10 @@
+.header-box{
+  display: grid;
+  justify-items: center;
+  background-color: #ffffff;
+}
+.pageone-main-grey-box{
+  height: 5px;
+  width: 100%;
+  background-color: #F5F5F5;
+}

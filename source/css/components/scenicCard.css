@@ -1,0 +1,96 @@
+/* 景区卡片样式 */
+.card-box{
+  width: 100%;
+  height: 160px;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+.card-box img{
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+}
+.card-box .card-word-box{
+  height: 130px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  font-size: 12px;
+}
+.card-word-box strong{
+  font-size: 16px;
+}
+/* 景区卡片的标签样式 */
+.tag-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.tag-box .level-tag{
+  width: 50px;
+  height: 22px;
+  font-size: 12px;
+  background-color: #4fcaad;
+  color: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.tag-box .other-tag{
+  width: 60px;
+  height: 22px;
+  font-size: 12px;
+  background-color: #fff0f3;
+  color: #ee5c69;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+.position-tag{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.position-tag .pinglun-tag{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.position-tag .pinglun-tag img{
+  width: 15px;
+  height: 15px;
+  border-radius: 0;
+}
+.price-tag{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.price-tag .text--red{
+  font-size: 14px;
+  font-weight: 600;
+}
+.reservation-tag{
+  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+.reservation-tag img{
+  margin-left: 5px;
+  width: 6px;
+  height: 10px;
+  border-radius: 0;
+}

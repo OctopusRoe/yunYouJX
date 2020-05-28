@@ -1,0 +1,31 @@
+@import './allComponentsCss.css';
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* 固定样式 */
+.m-t-10{
+  margin-top: 10px;
+}
+.m-t-20{
+  margin-top: 20px;
+}
+.m-l-10{
+  margin-left: 10px;
+}
+.m-l-2{
+  margin-left: 2px;
+}
+.text--green{
+  color: #4fcaad;
+}
+.text--grey{
+  color: #cccccc;
+}
+.text--red{
+  color: #ec3843;
+}
+.text--grey--darken{
+  color: #757575;
+}
