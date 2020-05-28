@@ -12,9 +12,12 @@ const imgSwipe = {
       <div class="img-swipe-info-box">
         <div>
           <span>24°</span>
-          <p>南昌市/多云</p>
+          <p class="m-t-5">南昌市/多云</p>
         </div>
-        <div></div>
+        <div class="img-index-box">
+          <img src="../source/images/jingdian/img.png"/>
+          <p>1/{{images.length}}</p>
+        </div>
       </div>
     </div> 
   `

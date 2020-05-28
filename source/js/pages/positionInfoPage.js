@@ -17,6 +17,13 @@ const positionInfoPage = {
     <header>
       <img-swipe :images="images"></img-swipe>
     </header>
+    <main class="pip-main-box">
+      <div class="pip-main-top">
+        <div></div>
+      </div>
+      <div class="position-title">
+      </div>
+    </main>
   </div>
   `
 }

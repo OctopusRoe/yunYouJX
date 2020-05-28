@@ -4,12 +4,12 @@
 }
 .img-swipe img{
   width: 100%;
-  height: 280px;
+  height: 250px;
   position: relative;
   z-index: 1;
 }
 .img-swipe .img-swipe-info-box{
-  width: 80%;
+  width: 85%;
   height: 50px;
   position: relative;
   float: left;
@@ -18,6 +18,9 @@
   transform: translate(-50%);
   z-index: 2;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .img-swipe .img-swipe-info-box div span{
   color: #ffffff;
@@ -26,5 +29,24 @@
 .img-swipe .img-swipe-info-box div p{
   color: #ffffff;
   font-size: 12px;
-  margin-top: 5px;
+}
+.img-swipe .img-index-box{
+  width: 60px;
+  height: 25px;
+  background-color: #212121;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  border-radius: 12.5px;
+}
+.img-swipe .img-index-box img{
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+}
+.img-swipe .img-index-box p{
+  margin-left: 3px;
+  letter-spacing: 3px;
 }
