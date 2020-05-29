@@ -1,6 +1,11 @@
 /* 顶部搜索的组件 */
 
 const search = {
+  methods: {
+    goBack () {
+      this.$router.back()
+    }
+  },
   template: `
     <div class="title-box">
       <div class="search-box">

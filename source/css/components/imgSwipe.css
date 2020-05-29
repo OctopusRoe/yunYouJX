@@ -1,6 +1,7 @@
 .img-swipe{
   width: 100%;
   height: auto;
+  position: relative;
 }
 .img-swipe img{
   width: 100%;

@@ -6,6 +6,8 @@
 @import './components/mainNav.css';
 /* 引入scenicCard组件样式 */
 @import './components/scenicCard.css';
+/* 引入baseGoBakc组件样式 */
+@import './components/baseGoBack.css';
 /* 引入smallTag组件样式 */
 @import './components/smallTag.css';
 /* 引入 pageOne 页面样式 */
@@ -13,5 +15,11 @@
 
 /* 引入imgSwipe组件样式 */
 @import './components/imgSwipe.css';
+/* 引入positionInfoTitle组件样式 */
+@import './components/positionInfoTitle.css';
 /* 引入 positionInfoPage 页面样式 */
 @import './pages/positionInfoPage.css';
+
+
+/* 引入 positionInfoPage 页面样式 */
+@import './pages/playUseful.css';

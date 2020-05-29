@@ -1,7 +1,6 @@
 .po-in-pa{
   width: 100%;
   height: auto;
-  background-color: #f5f5f5;
   position: relative;
 }
 .pip-main-box{
@@ -32,15 +31,209 @@
   align-items: flex-start;
   justify-content: center;
 }
-.pip-main-box .pip-main-top div::after{
-  content: '';
-  width: 10px;
+.pip-main-box .pip-main-top div img{
+  width: 40px;
   height: 10px;
-  z-index: 2;
-  -webkit-clip-path: polygon(50% 0,0 100%, 100% 100%);
-  clip-path: polygon(50% 0,0 100%, 100% 100%);
-  border: 6px solid #4fcaad;
 }
 .po-in-pa .pip-main-box .position-title{
-  
+  width: 100%;
+  display: grid;
+}
+.po-main-box{
+  height: auto;
+  display: grid;
+  justify-items: center;
+}
+.po-text-box{
+  width: 90%;
+  height: auto;
+  font-size: 13.5px;
+  position: relative;
+}
+.po-text-box p{
+  line-height: 20px;
+}
+.po-text-btn-box{
+  width: 55px;
+  height: 18px;
+  background-color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  left: 85%;
+  top: -18px;
+}
+.po-title-card{
+  display: flex;
+}
+.po-title-card div{
+  width: 120px;
+  height: 50px;
+  background-color: #EEEEEE;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 15px;
+  margin: 20px;
+}
+.po-title-card div img{
+  width: 18px;
+}
+.po-scenic-info{
+  justify-self: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 14px;
+}
+.po-scenic-info div{
+  width: 3px;
+  height: 20px;
+  background-color: #4fcaad;
+}
+.po-scenic-allinfo{
+  width: 100%;
+  display: grid;
+}
+.po-scenic-allinfo .m-l-20{
+  width: 90%;
+  margin-top: 15px;
+  height: auto;
+  font-size: 12px;
+  color: #757575;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+.po-scenic-allinfo .m-l-20 .van-ellipsis{
+  width: 95%;
+  font-size: 12px;
+  color: #212121;
+  margin-left: 10px;
+  letter-spacing: 2px;
+}
+.po-scenic-img-box{
+  justify-self: center;
+  align-items: center;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5,20%);
+  justify-items: center;
+  align-items: center;
+  font-size: 12px;
+}
+.po-scenic-img-box .m-t-20{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.po-scenic-img-box img{
+  width: 20px;
+  height: 20px;
+}
+
+.po-comment-info{
+  width: 90%;
+  height: 50px;
+  justify-self: start;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: start;
+  align-items: center;
+
+  font-size: 14px;
+  margin-top: 30px;
+}
+.po-comment-info-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.green-line{
+  width: 3px;
+  height: 20px;
+  background-color: #4fcaad;
+}
+.po-comment-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  justify-self: end;
+}
+.po-comment-box p{
+  margin-left: 5px;
+}
+.po-comment-box img{
+  width: 15px;
+  height: 15px;
+}
+.po-comment-info-box{
+  width: 100%;
+  height: 100px;
+  font-size: 12px;
+  display: grid;
+}
+.po-comment-info-box p{
+  justify-self: center;
+  align-self: center;
+}
+.po-placeholder-box{
+  width: 100%;
+  height: 10px;
+  background-color: #f5f5f5;
+}
+.po-periphery-box{
+  width: 100%;
+}
+.po-periphery-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  font-size: 14px;
+}
+.po-periphery-title div{
+  width: 3px;
+  height: 20px;
+  background-color: #4fcaad;
+}
+.po-periphery-info-box{
+  width: 100%;
+  height: 100px;
+  font-size: 12px;
+  display: grid;
+}
+.po-periphery-info-box p{
+  justify-self: center;
+  align-self: center;
+}
+.po-bottom-box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.po-bottom-box p{
+  font-size: 12px;
+}
+
+.po-collect-box{
+  height: 55px;
+  display: grid;
+  align-items: center;
+  box-shadow: 0 -1px 5px 1px #EEEEEE;
+  z-index: 2;
+}
+.po-collect-box div{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.po-collect-box div p{
+  font-size: 14px;
 }

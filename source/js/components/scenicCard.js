@@ -18,7 +18,7 @@ const scenicCard = {
   },
   template:`
   <div class="main-box">
-    <div class="card-box">
+    <div class="card-box" @click="$emit('click',$event)">
       <img src="../source/images/nc.jpg" alt="">
       <div class="card-word-box">
         <strong>滕王阁景区</strong>

@@ -1,0 +1,8 @@
+.go-back img{
+  width: 12px;
+  height: 20px;
+  position: fixed;
+  left: 20px;
+  top: 12.5px;
+  z-index: 3;
+}

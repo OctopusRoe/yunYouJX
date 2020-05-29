@@ -1,0 +1,39 @@
+.pu-info-box{
+  width: 100%;
+  position: relative;
+}
+.pu-info-box header img{
+  width: 100%;
+  height: 250px;
+  z-index: 1;
+}
+/* .pu-placeholder-box{
+  width: 75%;
+  height: 5px;
+  position: relative;
+  opacity: .9;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px rgba(255,255,255,1);
+  background-color: #ffffff;
+  z-index: 2;
+} */
+.pu-info-box main{
+  margin-top: 30px;
+  z-index: 3;
+}
+.pu-info-box main strong{
+  font-size: 22px;
+}
+.pu-info-box .pu-info-tag-box{
+  display: flex;
+  flex-direction: row;
+}
+.pu-info-box  p{
+  font-size: 12px;
+}
+.pu-info-box .pu-bottom-box{
+  display: grid;
+  justify-items: center;
+}

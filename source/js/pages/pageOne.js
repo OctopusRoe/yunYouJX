@@ -1,6 +1,6 @@
 /* 全部风景名胜展示页面 */
 
-var pageOne = {
+const pageOne = {
   data () {
     return {
       list: [],
@@ -12,6 +12,10 @@ var pageOne = {
     /* 得到title组件中的target数据 */
     takeTitleValue(e) {
       console.log(e)
+    },
+    /* 前往详情页的方法 */
+    goToInfo() {
+      this.$router.push('positionInfoPage')
     },
     /* 上滑刷新的方法 */
     onLoad() {
@@ -37,10 +41,12 @@ var pageOne = {
     'search-box': search,
     'title-nav': titleNav,
     'scenic-card': scenicCard,
-    'main-nav': mainNav
+    'main-nav': mainNav,
+    'base-go-back': baseGoBack
   },
   template: `
   <div>
+    <base-go-back></base-go-back>
     <header class="header-box">
       <search-box></search-box>
       <title-nav @click="takeTitleValue($event)"></title-nav>
@@ -49,7 +55,7 @@ var pageOne = {
       <div class="pageone-main-grey-box"></div>
       <van-sticky><main-nav></main-nav></van-sticky>
       <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-        <scenic-card v-for="item in list" :key="item" :title="item"></scenic-card>
+        <scenic-card v-for="item in list" :key="item" :title="item" @click="goToInfo()"></scenic-card>
       </van-list>
     </main>
   </div>

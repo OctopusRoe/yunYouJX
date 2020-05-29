@@ -5,6 +5,9 @@
 }
 
 /* 固定样式 */
+.m-t-3{
+  margin-top: 3px;
+}
 .m-t-5{
   margin-top: 5px;
 }
@@ -14,11 +17,23 @@
 .m-t-20{
   margin-top: 20px;
 }
+.m-t-40{
+  margin-top: 40px;
+}
 .m-l-10{
   margin-left: 10px;
 }
+.m-l-20{
+  margin-left: 20px;
+}
 .m-l-2{
   margin-left: 2px;
+}
+.m-l-3{
+  margin-left: 3px;
+}
+.m-l-5{
+  margin-left: 5px;
 }
 .text--green{
   color: #4fcaad;
@@ -31,4 +46,7 @@
 }
 .text--grey--darken{
   color: #757575;
+}
+.text--black{
+  color: #212121;
 }
