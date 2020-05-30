@@ -32,6 +32,10 @@ const positionInfoPage = {
     /* 返回上一页面 */
     goBack () {
       this.$router.back()
+    },
+    /* 转跳到 评论 页面 */
+    gotoCommentPage() {
+      this.$router.push('commentPage')
     }
   },
   components: {
@@ -111,7 +115,7 @@ const positionInfoPage = {
             <strong class="m-l-10">大众评价</strong>
           </div>
 
-          <div class="m-t-3 po-comment-box">
+          <div class="m-t-3 po-comment-box" @click="gotoCommentPage()">
             <img src="../source/images/jingdian/pinglun.png" />
             <p class="text--grey--darken">{{0}}条评论></p>
           </div>

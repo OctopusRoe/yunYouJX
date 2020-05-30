@@ -1,0 +1,69 @@
+.usercom-card-box{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 12px;
+}
+.usercom-card-box .com-user-info-title{
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  justify-items: start;
+  align-items: center;
+}
+.com-user-photo{
+  width: 50px;
+  height: 50px;
+  justify-self: center;
+  align-self: center;
+}
+.com-user-photo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.com-user-info{
+  width: 100%;
+  font-size: 12px;
+  display: grid;
+}
+.com-user-info strong{
+  font-size: 14px;
+}
+.com-user-info .m-t-5{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.com-user-time-box{
+  justify-self: center;
+  align-self: center;
+  margin-top: 22px;
+}
+.com-user-content{
+  width: 80%;
+}
+.com-user-content p{
+  letter-spacing: 1px;
+  line-height: 16px;
+  width: 100%;
+}
+.com-user-content-photo-box{
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.com-user-content-photo-box img{
+  width: 90px;
+}
+.com-user-content .m-t-20{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+}

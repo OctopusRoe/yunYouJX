@@ -4,6 +4,8 @@
 @import './components/titleNav.css';
 /* 引入mainNav组件样式 */
 @import './components/mainNav.css';
+/* 引入hotTag组件样式 */
+@import './components/hotTag.css';
 /* 引入scenicCard组件样式 */
 @import './components/scenicCard.css';
 /* 引入baseGoBakc组件样式 */
@@ -23,3 +25,18 @@
 
 /* 引入 positionInfoPage 页面样式 */
 @import './pages/playUseful.css';
+
+/* 引入commentTitle组件样式 */
+@import './components/commentTitle.css';
+/* 引入userCommentCard组件样式 */
+@import './components/userCommentCard.css';
+/* 引入 commentPage 页面样式 */
+@import './pages/commentPage.css';
+
+/* 引入 addComment 页面样式 */
+@import './pages/addComment.css';
+
+/* 引入hotelNav组件样式 */
+@import './components/hotelNav.css';
+/* 引入 allhotel 页面样式 */
+@import './pages/allHotel.css'

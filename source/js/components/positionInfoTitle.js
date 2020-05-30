@@ -6,6 +6,11 @@ const positionInfoTitle = {
       starValue: 0
     }
   },
+  methods: {
+    gotoCommentPage() {
+      this.$router.push('commentPage')
+    }
+  },
   components: {
     'base-tag': smallTag,
   },
@@ -24,7 +29,7 @@ const positionInfoTitle = {
         <div class="m-t-3">
           <van-rate v-model="starValue" readonly size="10" />
         </div>
-        <div class="m-t-3 pinlun-box">
+        <div class="m-t-3 pinlun-box" @click="gotoCommentPage()">
           <img src="../source/images/jingdian/pinglun.png" />
           <p class="text--grey--darken">{{0}}条评论></p>
         </div>

@@ -15,11 +15,15 @@ const scenicCard = {
   /* 注册smallTag组件 */
   components: {
     'base-tag': smallTag,
+    'hot-tag': hotTag,
   },
   template:`
   <div class="main-box">
     <div class="card-box" @click="$emit('click',$event)">
-      <img src="../source/images/nc.jpg" alt="">
+      <div>
+        <hot-tag></hot-tag>
+        <img id="scenic-card-img" src="../source/images/nc.jpg" alt="">
+      </div>
       <div class="card-word-box">
         <strong>滕王阁景区</strong>
         <p>人杰地灵</p>

@@ -1,0 +1,22 @@
+.hot-tag-box{
+  font-size: 12px;
+}
+
+.hot-tag-box div img{
+  width: 14px;
+  height: 14px;
+}
+.hot-tag-box div{
+  width: 55px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAFAFA;
+  border-radius: 15px;
+  float: left;
+  position: relative;
+  left: 5px;
+  top: 15px;
+  color: #EF5350;
+}

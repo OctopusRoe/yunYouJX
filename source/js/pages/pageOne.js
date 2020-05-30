@@ -47,8 +47,8 @@ const pageOne = {
   template: `
   <div>
     <base-go-back></base-go-back>
+    <search-box></search-box>
     <header class="header-box">
-      <search-box></search-box>
       <title-nav @click="takeTitleValue($event)"></title-nav>
     </header>
     <main>
