@@ -1,7 +1,11 @@
 /* 图片轮播组件 */
 
 const imgSwipe = {
-  props: ['images'],
+  props: ['images', 'temperature', 'weather'],
+  data() {
+    return {
+    }
+  },
   template: `
     <div class="img-swipe">
       <van-swipe class="img-box" :autoplay="0" :show-indicators="false">
@@ -11,8 +15,8 @@ const imgSwipe = {
       </van-swipe>
       <div class="img-swipe-info-box">
         <div>
-          <span>24°</span>
-          <p class="m-t-5">南昌市/多云</p>
+          <span>{{temperature}}</span>
+          <p class="m-t-5">{{weather}}</p>
         </div>
         <div class="img-index-box">
           <img src="../source/images/jingdian/img.png"/>

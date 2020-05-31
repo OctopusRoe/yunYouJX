@@ -1,3 +1,14 @@
 .all-hotel-page-box{
   width: 100%;
 }
+.all-hotel-page-box main{
+  width: 100%;
+  display: grid;
+}
+.all-hotel-page-main-card-box{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-items: center;
+  align-items: center;
+}

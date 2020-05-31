@@ -1,0 +1,41 @@
+.hotel-card-box{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.hotel-card-box .hotel-card-photo-box{
+  position: relative;
+}
+.hotel-card-box .hotel-card-type{
+  display: flex;
+  position: relative;
+  width: 60px;
+  height: 16px;
+  background-color: #4fcaad;
+  border-radius: 10px;
+  left: 8px;
+  top: 23px;
+  z-index: 1;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.hotel-card-name{
+  width: 10rem;
+  font-size: 15px;
+  font-weight: 400;
+  position: relative;
+}
+.hotel-card-postiion{
+  width: 10rem;
+  display: flex;
+  justify-content: start;
+}
+.hotel-card-postiion p{
+  font-size: 12px;
+}
+.hotel-card-postiion img{
+  width: 12px;
+}

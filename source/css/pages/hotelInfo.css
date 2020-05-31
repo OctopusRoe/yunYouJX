@@ -1,0 +1,102 @@
+.hotel-info-box{
+  width: 100%;
+}
+.hotel-info-mian-box{
+  width: 100%;
+  position: relative;
+  top: -70px;
+  background-color: #ffffff;
+  border-radius: 20px 20px 0px 0px;
+  clear: both;
+  display: grid;
+}
+.hotel-info-mian-box .hotel-info-main-top{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hotel-info-mian-box .hotel-info-main-top div{
+  position: relative;
+  width: 40px;
+  height: 20px;
+  top: -10px;
+  background-color: #ffffff;
+  border-radius: 10px 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.hotel-info-mian-box .hotel-info-main-top div img{
+  width: 40px;
+  height: 10px;
+}
+.hotel-info-mian-box .hotel-info-mian-tag-box{
+  display: flex;
+  justify-self: center;
+  width: 90%;
+}
+.hotel-info-mian-box .hotel-info-mian-tag-box div{
+  display: flex;
+  align-items: center;
+}
+.hotel-info-mian-box .hotel-info-mian-tag-box img{
+  width: 15px;
+}
+.hotel-info-mian-box .hotel-info-mian-tag-box p{
+  font-size: 12px;
+}
+.hotel-info-mian-room-box{
+  width: 90%;
+  justify-self: center;
+}
+.hotel-info{
+  justify-self: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 14px;
+}
+.hotel-info div{
+  width: 3px;
+  height: 20px;
+  background-color: #4fcaad;
+}
+.hotel-info-text-box{
+  width: 90%;
+  height: auto;
+  justify-self: center;
+  font-size: 13.5px;
+  line-height: 20px;
+}
+
+.hotel-collect-box{
+  height: 55px;
+  display: grid;
+  align-items: center;
+  box-shadow: 0 -1px 5px 1px #EEEEEE;
+  z-index: 2;
+}
+.hotel-collect-box div{
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.hotel-collect-box div p{
+  font-size: 14px;
+}
+.hotel-collect-box .hotel-collect-btn{
+  width: 60%;
+  height: 30px;
+  background-color: #D32F2F;
+  margin-left: 40px;
+  border-radius: 15px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

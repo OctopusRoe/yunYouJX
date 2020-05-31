@@ -6,8 +6,8 @@ const scenicCard = {
     return {
       cardInfo:{
         position: null,
-        
-      }
+      },
+      src: '../source/images/nc.jpg'
     }
   },
   methods: {
@@ -22,7 +22,7 @@ const scenicCard = {
     <div class="card-box" @click="$emit('click',$event)">
       <div>
         <hot-tag></hot-tag>
-        <img id="scenic-card-img" src="../source/images/nc.jpg" alt="">
+        <img id="scenic-card-img" :src="src" alt="">
       </div>
       <div class="card-word-box">
         <strong>滕王阁景区</strong>

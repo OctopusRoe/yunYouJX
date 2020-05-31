@@ -1,0 +1,29 @@
+/* 房间卡片组件 样式 */
+.room-card-box{
+  width: 100%;
+  min-height: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px #E0E0E0;
+}
+.room-card-box .room-card-box-list{
+  height: 60px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.room-card-box .room-card-box-list .room-card-main{
+  align-self: center;
+  display: flex;
+  
+}
+.room-card-main-type strong{
+  font-size: 15px;
+  font-weight: 600;
+}
+.room-card-main-type p{
+  font-size: 12px;
+}
+.room-card-phone{
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+}

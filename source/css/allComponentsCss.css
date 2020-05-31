@@ -38,5 +38,17 @@
 
 /* 引入hotelNav组件样式 */
 @import './components/hotelNav.css';
+/* 引入hotelCard组件样式 */
+@import './components/hotelCard.css';
 /* 引入 allhotel 页面样式 */
-@import './pages/allHotel.css'
+@import './pages/allHotel.css';
+
+/* 引入hotelInfoTitle组件样式 */
+@import './components/hotelInfoTitle.css';
+/* 引入roomCard组件样式 */
+@import './components/roomCard.css';
+/* 引入 hotelInfo 页面样式 */
+@import './pages/hotelInfo.css';
+
+/* 引入 searchPage 页面样式 */
+@import './pages/searchPage.css'

@@ -6,7 +6,9 @@ Vue.use(vant.Lazyload);
 /* 注册 vue-router 地址 */
 const routes = [
   {path: '/' ,redirect: 'allHotel'},
-  {path: '/allHotel', name: 'allHotel', component: allHotel}
+  {path: '/allHotel', name: 'allHotel', component: allHotel},
+  {path: '/hotelInfo', name: 'hotelInfo', component: hotelInfo},
+  {path: '/searchPage', name: 'searchPage', component: searchPage}
 ]
 
 /* 注册 vue-router 实例 */

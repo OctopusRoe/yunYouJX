@@ -13,10 +13,15 @@ const positionInfoPage = {
       collectValue: 0,
       /* 介绍文字 */
       textValue: '我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句我是一段测试语句',
+      /* 图片地址数组 */
       images: [
         '../source/images/nc.jpg',
         '../source/images/nc.jpg',
       ],
+      /* 温度 */
+      temperature: '24°',
+      /* 天气 */
+      weather: '南昌市/多云'
     }
   },
   methods: {
@@ -47,7 +52,7 @@ const positionInfoPage = {
   <div class="po-in-pa">
     <base-go-back></base-go-back>
     <header>
-      <img-swipe :images="images"></img-swipe>
+      <img-swipe :images="images" :temperature="temperature" :weather="weather"></img-swipe>
     </header>
 
     <main class="pip-main-box">

@@ -10,7 +10,8 @@ const routes = [
   {path: '/positionInfoPage', name: 'positionInfoPage', component: positionInfoPage},
   {path: '/playUseful', name: 'playUseful', component: playUseful},
   {path: '/commentPage', name: 'commentPage', component: commentPage},
-  {path: '/addComment', name: 'addComment', component: addComment}
+  {path: '/addComment', name: 'addComment', component: addComment},
+  {path: '/searchPage', name: 'searchPage', component: searchPage}
 ]
 
 /* 注册 vue-router 实例 */
