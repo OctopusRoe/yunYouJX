@@ -9,7 +9,7 @@ const commentPage = {
   },
   created() {
     /* 调用父组件中的 加载动画 方法 */
-    this.$parent.loadingMsg('加载中...')
+    this.$parent.loadingMsg(500, '加载中...')
     /* 组件创建时，返回顶部 */
     window.scrollTo(0, 0)
   },

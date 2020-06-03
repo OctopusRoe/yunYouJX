@@ -21,13 +21,30 @@ const router = new VueRouter({
 
 /* 全局 Vue 实例  */
 const app = new Vue({
+  data() {
+    return {
+      /* 风景data数组的索引 */
+      scenicDataIndex: null,
+      /* 风景数组的全部数据 */
+      sceninList: scenicData,
+      /* 储存 scenicList 长度 */
+      scenicListLength: scenicData.length,
+      /* 风景数组的临时数据 */
+      list: scenicData,
+      /* 风景数据查询中间数据 */
+      middleList: null,
+      /* 用于判断是否新进入页面 */
+      controlValue: false,
+    }
+  },
   methods: {
-
+    
     /* 全局加载动画的方法 */
-    loadingMsg (msg) {
+    loadingMsg (time, msg) {
       this.$toast.loading({
         message: msg,
         forbidClick: true,
+        duration: time
       })
     }
   },

@@ -1,16 +1,17 @@
 /* 条件选择组件 */
 
 const mainNav = {
+  props: ['positionValue', 'scenicValue', 'starValue'],
   data() {
     return {
       /* 地点索引 */
-      positionNum: 0,
+      positionNum: this.positionValue,
       /* 风景索引 */
-      scenicNum: 0,
+      scenicNum: this.scenicValue,
       /* 选择索引 */
       sortingNum: 0,
       /* 级别索引 */
-      starNum: 0,
+      starNum: this.starValue,
 
       /* 地点数据 */
       position: [
@@ -34,7 +35,7 @@ const mainNav = {
         { text: '名胜古迹', value: 2 },
         { text: '公园乐园', value: 3 },
         { text: '展馆展览', value: 4 },
-        { text: '温泉泡场', value: 5 },
+        { text: '温泉泡汤', value: 5 },
         { text: '动植物园', value: 6 },
         { text: '水上项目', value: 7 },
         { text: '赛事演出', value: 8 },
@@ -66,16 +67,30 @@ const mainNav = {
   },
   methods: {
     /* 可以传递父组件参数的方法 */
-    takeMainNavValue (event) {
-      this.$emit('click', event)
+    takeMainNavValue () {
+      const a = this.takeValue()
+      this.$emit('click', a)
+    },
+    /* 设置要传递给父组件的参数 */
+    takeValue() {
+      let b = []
+      b[0] = this.position.filter(item => item.value === this.positionNum)[0]
+      b[1] = this.scenic.filter(item => item.value === this.scenicNum)[0]
+      b[2] = this.star.filter(item => item.value === this.starNum)[0]
+      return b
+    },
+  },
+  watch: {
+    scenicValue(newvalue,oldvalue) {
+      this.scenicNum = newvalue
     }
   },
   template: `
-  <nav class="main-nav" direction="down">
+  <nav class="main-nav" direction="down" @click="takeMainNavValue()">
     <van-dropdown-menu active-color="#4fcaad">
-      <van-dropdown-item v-model="positionNum" :options="position"/>
-      <van-dropdown-item v-model="scenicNum" :options="scenic"/>
-      <van-dropdown-item v-model="sortingNum" :options="sorting"/>
+      <van-dropdown-item v-model="positionNum" :options="position" />
+      <van-dropdown-item v-model="scenicNum" :options="scenic" />
+      <!-- <van-dropdown-item v-model="sortingNum" :options="sorting"/> -->
       <van-dropdown-item v-model="starNum" :options="star"/>
     </van-dropdown-menu>
   </nav>
