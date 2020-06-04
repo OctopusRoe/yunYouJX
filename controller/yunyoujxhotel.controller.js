@@ -18,8 +18,24 @@ const router = new VueRouter({
 
 /* 全局 Vue 实例  */
 const app = new Vue({
+  data() {
+    return {
+      /* 保存的索引数组 */
+      hotelList: [],
+      /* 保存的索引 */
+      hotelListIndex: null,
+      /* 永久带房间的数组 */
+      hotelList: []
+    }
+  },
   methods: {
-
+    /* 全局提示信息 */
+    msgShow (time, msg) {
+      this.$toast({
+        message: msg,
+        duration: time
+      })
+    },
     /* 全局加载动画的方法 */
     loadingMsg (msg) {
       this.$toast.loading({

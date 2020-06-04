@@ -11,7 +11,8 @@ const routes = [
   {path: '/playUseful', name: 'playUseful', component: playUseful},
   {path: '/commentPage', name: 'commentPage', component: commentPage},
   {path: '/addComment', name: 'addComment', component: addComment},
-  {path: '/searchPage', name: 'searchPage', component: searchPage}
+  {path: '/searchPage', name: 'searchPage', component: searchPage},
+  {path: '/scenicInfoPage', name: 'scenicInfoPage', component: scenicInfoPage}
 ]
 
 /* 注册 vue-router 实例 */
@@ -29,16 +30,20 @@ const app = new Vue({
       sceninList: scenicData,
       /* 储存 scenicList 长度 */
       scenicListLength: scenicData.length,
-      /* 风景数组的临时数据 */
-      list: scenicData,
+      /* 带价格的永久数组 */
+      scenicList: [],
       /* 风景数据查询中间数据 */
       middleList: null,
-      /* 用于判断是否新进入页面 */
-      controlValue: false,
     }
   },
   methods: {
-    
+    /* 全局提示信息 */
+    msgShow (time, msg) {
+      this.$toast({
+        message: msg,
+        duration: time
+      })
+    },
     /* 全局加载动画的方法 */
     loadingMsg (time, msg) {
       this.$toast.loading({

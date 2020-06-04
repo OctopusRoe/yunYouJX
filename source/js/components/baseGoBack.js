@@ -4,7 +4,7 @@ const baseGoBack = {
   methods: {
     /* 返回上一页的方法 */
     goBack () {
-      this.$router.back()
+      this.$emit('click', event)
     }
   },
   template: `

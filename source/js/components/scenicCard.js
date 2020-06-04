@@ -1,7 +1,7 @@
 /* 风景名胜卡片组件 */
 
 const scenicCard = {
-  props: ['title', 'shortInfo', 'levelTag', 'description', 'src', 'areaName', 'productScore', 'evaluateCount', 'hot'],
+  props: ['title', 'shortInfo', 'levelTag', 'description', 'src', 'areaName', 'productScore', 'evaluateCount', 'hot', 'price'],
   data() {
     return {
       /* 图片地址 */
@@ -16,24 +16,33 @@ const scenicCard = {
       evaluate: 0,
       /* 是否显示热门标签 */
       showHotTag: this.hot === 1,
+      /* 是否显示 shortInfo  */
+      showShortInfo: this.showShort(),
+      /* 保存是否显示价格 */
+      showPriceValue: this.showPrice(),
     }
   },
   methods: {
+    /* 判断是否显示价格的方法 */
+    showPrice () {
+      if(this.price === -1) return false
+      else return true 
+    },
+    /* 是否显示 shortInfo 的方法 */
+    showShort () {
+      if (this.shortInfo === '' || this.shortInfo === null) return false
+      else return true
+    },
     /* 是否显示leaveTag的方法 */
     showLeave () {
-      if (this.shortInfo === '') {
-        return false
-      } else {
-        return true
-      }
+      if (this.levelTag === '') return false
+      else return true
     },
     /* 是否显示tagList数组的方法 */
     showTag () {
-      if (this.description === '') {
-        return false
-      } else {
-        return true
-      }
+      if (this.description === '') return false
+      else return true
+      
     },
     /* 处理tag标签的数据 */
     takeDescription () {
@@ -52,15 +61,21 @@ const scenicCard = {
       } else {
         this.evaluate = this.evaluateCount
       }
-    },
-    created () {
-      // this.takeDescription();
-      this.takeEvaluateCount();
-      console.log(1)
-    },
+    }
   },
   watch: {
-    
+    src (newValue) {
+      this.patch = 'http://www.yyjxcloud.com/' + newValue
+    },
+    levelTag (newValue) {
+      this.showLeaveTag = this.showLeave()
+    },
+    shortInfo () {
+      this.showShortInfo = this.showShort()
+    },
+    price () {
+      this.showPriceValue = this.showPrice() 
+    }
   },
   /* 注册smallTag组件 */
   components: {
@@ -70,34 +85,34 @@ const scenicCard = {
   template:`
   <div class="main-box m-t-10">
     <div class="card-box" @click="$emit('click',$event)">
-      <div>
-        <hot-tag v-show="showHotTag"></hot-tag>
-        <img id="scenic-card-img" :src="patch" alt="">
+      <div class="card-box-hot-tag-box">
+        <hot-tag class="card-box-hot-tag" v-if="showHotTag"></hot-tag>
+        <van-image id="scenic-card-img" round="10" :src="patch" />
       </div>
       <div class="card-word-box">
         <strong>{{title}}</strong>
-        <p class="m-t-5">{{shortInfo}}</p>
+        <p v-if="showShortInfo" class="m-t-5 show--text">{{shortInfo}}</p>
         <div class="tag-box">
-          <base-tag v-show="showLeaveTag" class="m-r-5 m-t-5" :title='levelTag' color='green'></base-tag>
-          <base-tag v-show="showTagLIst" class="m-t-5" v-for="(item,index) in tagList" :title='item' :key='index' color='other'></base-tag>
+          <base-tag v-if="showLeaveTag" class="m-r-5 m-t-5" :title='levelTag' color='green'></base-tag>
+          <base-tag v-if="showTagLIst" class="m-t-5" v-for="(item,index) in tagList" :title='item' :key='index' color='other'></base-tag>
         </div>
         <div class="position-tag m-t-5">
           <p class="">{{areaName}}</p>
           <p class="m-l-10 text--grey">|</p>
           <p class="m-l-10 text--green">{{productScore}} 分</p>
+          <!-- 
           <p class="m-l-10 text--grey">|</p>
-          <div class="pinglun-tag m-l-10">
-            <img src="../source/images/jingdian/pinglun.png" alt="">
-            <p class="text--grey m-l-5">{{evaluate}}</p>
-          </div>
+            <div class="pinglun-tag m-l-10">
+              <img src="../source/images/jingdian/pinglun.png" alt="">
+              <p class="text--grey m-l-5">{{evaluate}}</p>
+            </div>
+          -->
         </div>
-        <!--
-        <div class="price-tag">
+        <div v-if="showPriceValue" class="price-tag">
           <p class="text--red">￥</p>
-          <p class="text--red">55</p>
+          <p class="text--red">{{price}}</p>
           <p class="text--grey--darken m-l-2">起</p>
         </div>
-        -->
       </div>
     </div>
   </div>

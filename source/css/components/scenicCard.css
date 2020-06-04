@@ -14,14 +14,19 @@
   align-items: center;
   position: relative;
 }
+.card-box-hot-tag-box{
+  position: relative;
+}
+.card-box-hot-tag{
+  position: absolute;
+}
 .card-box #scenic-card-img{
   width: 130px;
   height: 130px;
   border-radius: 20px;
-  margin-top: -10px;
 }
 .card-box .card-word-box{
-  height: 130px;
+  height: 135px;
   width: 96%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;

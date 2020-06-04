@@ -1,30 +1,40 @@
 .hotel-card-box{
   width: 100%;
+  height: 220px;
   display: grid;
   justify-items: center;
   align-items: center;
 }
 .hotel-card-box .hotel-card-photo-box{
+  height: 150px;
   position: relative;
 }
 .hotel-card-box .hotel-card-type{
   display: flex;
-  position: relative;
+  position: absolute;
   width: 60px;
   height: 16px;
   background-color: #4fcaad;
   border-radius: 10px;
   left: 8px;
-  top: 23px;
+  top: 5px;
   z-index: 1;
   font-size: 12px;
   justify-content: center;
   align-items: center;
   color: #ffffff;
+  float: left;
+}
+.hotel-card-photo{
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
 }
 .hotel-card-name{
   width: 10rem;
-  font-size: 15px;
+  height: 30px;
+  font-size: 13px;
   font-weight: 400;
   position: relative;
 }

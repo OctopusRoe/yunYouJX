@@ -50,6 +50,10 @@
   font-size: 13.5px;
   position: relative;
 }
+.po-text-box-value {
+  height: 100px;
+  overflow: hidden;
+}
 .po-text-box p{
   line-height: 20px;
 }

@@ -45,7 +45,7 @@ const mainNav = {
       /* 选择数据 */
       sorting: [
         { text: '推荐排序', value: 0 },
-        { text: '距离优先', value: 1 },
+        // { text: '距离优先', value: 1 },
         { text: '价格升序', value: 2 },
         { text: '价格降序', value: 3 },
       ],
@@ -77,6 +77,7 @@ const mainNav = {
       b[0] = this.position.filter(item => item.value === this.positionNum)[0]
       b[1] = this.scenic.filter(item => item.value === this.scenicNum)[0]
       b[2] = this.star.filter(item => item.value === this.starNum)[0]
+      b[3] = this.sorting.filter(item => item.value === this.sortingNum)[0]
       return b
     },
   },
@@ -90,7 +91,7 @@ const mainNav = {
     <van-dropdown-menu active-color="#4fcaad">
       <van-dropdown-item v-model="positionNum" :options="position" />
       <van-dropdown-item v-model="scenicNum" :options="scenic" />
-      <!-- <van-dropdown-item v-model="sortingNum" :options="sorting"/> -->
+      <van-dropdown-item v-model="sortingNum" :options="sorting"/>
       <van-dropdown-item v-model="starNum" :options="star"/>
     </van-dropdown-menu>
   </nav>

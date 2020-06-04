@@ -1,0 +1,67 @@
+.scenic-info-page-box{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  font-size: 12px;
+}
+.scenic-info-page-box strong{
+  font-size: 16px;
+}
+.scenic-info-main{
+  width: 95%;
+  display: grid;
+}
+.scenic-info-main p{
+  font-size: 12px;
+}
+.scenic-info-address-box{
+  display: flex;
+  justify-content: start;
+}
+.scenic-service{
+  width: 100%;
+  display: grid;
+}
+.scenic-service-box{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+.scenic-hash-map-box{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: end;
+}
+.scenic-hash-map-box div{
+  background-color: #ffffff;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-items: center;
+  box-shadow: 0 1px 2px 1px #cccccc;
+
+}
+.scenic-hash-map-box div a{
+  text-decoration:none;
+  color:#4fcaad;;
+}
+.scenic-hash-map-box div a:link{
+  text-decoration:none;
+}
+.scenic-hash-map-box div a:visited{
+  text-decoration:none;
+}
+.scenic-hash-map-box div a:active{
+  text-decoration:none;
+  color: #4fcaad;
+}
+.show--text{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 16px;
+}

@@ -5,6 +5,7 @@
 .hot-tag-box div img{
   width: 14px;
   height: 14px;
+  z-index: 2;
 }
 .hot-tag-box div{
   width: 55px;
@@ -14,9 +15,9 @@
   align-items: center;
   background-color: #FAFAFA;
   border-radius: 15px;
-  float: left;
   position: relative;
-  left: 5px;
-  top: 15px;
+  left: 7px;
+  top: 5px;
   color: #EF5350;
+  z-index: 1;
 }

@@ -11,14 +11,22 @@ const pageOne = {
       mainNavValue: {
         positionNum: 0,
         scenicNum: 0,
-        starNum: 0
+        starNum: 0,
+
       },
+      /* 门票价格 */
+      priceData: priceData.concat(),
       /* 风景的全部地址 */
-      sceninList: scenicData,
+      scenicList: scenicData.concat(),
       /* 储存 风景 数组长度 */
-      sceninLength: scenicData.length,
-      /* 风景的临时地址数据 */
-      middleList: null,
+      scenicLength: scenicData.concat().length,
+      /* 查询数据对象 */
+      searchData: {
+        position: null,
+        scenic: null,
+        star: null,
+        orderType: 1,
+      },
 
     }
   },
@@ -51,13 +59,16 @@ const pageOne = {
       // setTimeout 仅做示例，真实场景中一般为 ajax 请求
 
       setTimeout(() => {
-        for (let i = 0; i < 5; i++) {
-          this.list.push(this.sceninList.shift())
+        if (this.list.length < this.scenicLength) {
+          for (let i = 0; i < 5; i++) {
+            this.list.push(this.scenicList.shift())
+            
+          }
         }
         // 加载状态结束
         this.loading = false;
         // 数据全部加载完成
-        if (this.list.length >= this.sceninLength - 1) {
+        if (this.list.length >= this.scenicLength) {
           this.finished = true;
         }
       }, 1000);
@@ -65,62 +76,107 @@ const pageOne = {
     },
 
     /* *************************************************************************** */
+    /* 多条件搜索 */
+    search (data,filter){
+      if (filter.position != null) {
+        data = JSLINQ(data).Where(item => item.area_name === filter.position).ToArray();
+      }
+      if (filter.scenic != null) {
+        data= JSLINQ(data).Where(item => {
+          if (item.label_names === null) return
+          else {return item.label_names.indexOf(filter.scenic) > -1}
+        }).ToArray();
+      }
+      if (filter.star != null) {
+        data = JSLINQ(data).Where(item => item.region_level === filter.star).ToArray();
+      }
+      // console.log("data",data);
+      data = JSLINQ(data).Where(item => item.deleted == 0).ToArray();
 
-    /* 景点的查询方法 */
-    searchScenic (array, StringValue) {
-      return JSLINQ(array).Where(item => {
-        if (item.label_names === null) return
-        else {return item.label_names === StringValue || item.label_names.indexOf(StringValue) > -1}
-      }).ToArray();
+      var pids = JSLINQ(data).Select(x=>x.product_id).items;
+      // console.log("pid",pids);
+      var pdata = JSLINQ(priceData).Where(x=> x.parent_id ==="root" && pids.indexOf(x.product_id) > -1).Select(x=>{
+        return {"productId":x.product_id,"price":x.price};
+      }).items;
+      // console.log("pdata",pdata);
+      var pdataQuery=JSLINQ(pdata);
+      data.forEach(item => {
+        var t = pdataQuery.Where(x=> x.productId === item.product_id).FirstOrDefault();
+        if (t == null) {
+          item.price=-1;
+        }else{
+          item.price=t.price;
+        }
+      });
+      // console.log("data",data);
+      switch (filter.orderType) {
+        case 1:
+          break;
+        case 2:
+          data=JSLINQ(data).OrderBy(x=>x.price).ToArray();
+          break;
+        case 3:
+          data=JSLINQ(data).OrderByDescending(x=>x.price).ToArray();
+          break;
+      }
+      // console.log(data)
+      return data;
     },
-
-    /* 地点的查询方法 */
-    searchPosition (array, StringValue) {
-      return JSLINQ(array).Where(item => item.area_name === StringValue).ToArray();
+    /* 得到价格 */
+    takePrice (data) {
+      var pids = JSLINQ(data).Select(x=>x.product_id).items;
+      // console.log("pid",pids);
+      var pdata = JSLINQ(priceData).Where(x=> x.parent_id ==="root" && pids.indexOf(x.product_id) > -1).Select(x=>{
+        return {"productId":x.product_id,"price":x.price};
+      }).items;
+      // console.log("pdata",pdata);
+      var pdataQuery=JSLINQ(pdata);
+      data.forEach(item => {
+        var t = pdataQuery.Where(x=> x.productId === item.product_id).FirstOrDefault();
+        if (t == null) {
+          item.price=-1;
+        }else{
+          item.price=t.price;
+        }
+      });
+      return data;
     },
-
-    /* 星级的查询方法 */
-    searchStar (array, StringValue) {
-      return JSLINQ(array).Where(item => item.region_level === StringValue).ToArray();
-    },
-
     /* titleNav 处理 scenicData 数据 */
     getNewArray (StringValue) {
-      this.list = []
-      this.$parent.controlValue = true
       this.$parent.loadingMsg(500)
       let a = []
-      if (!this.$parent.middleList !== null) {a = this.searchScenic(scenicData,StringValue)}
-      else {a = this.searchScenic(this.$parent.middleList,StringValue)}
-      this.sceninList = a
-      // this.$parent.scenicListLength = a.length
+      this.searchData.scenic = StringValue
+      // console.log(this.search(scenicData, this.searchData))
+      a = this.search(scenicData, this.searchData)
+      this.list = a
+      this.scenicLength = a.length
 
-    },
-    /* 城市条件选择 */
-    getCityArray (StringValue) {
-      this.list = []
-      let a = []
-      setTimeout(() => {
-        this.list = a = JSLINQ(this.$parent.middleList).Where((item) => {
-          return item.area_name === StringValue
-        }).ToArray();
-      }, 500);
-      this.$parent.scenicListLength = this.list.length
-      console.log(this.$parent.scenicListLength)
     },
     /* 获取下拉菜单的数据 */
     mainNavBtn (event) {
-      const a = event
-      if (a[0].value === 0 && a[1].value === 0 && a[2].value === 0)return
-      else {
-        switch (true) {
-          case a[0].value !=0: this.getCityArray(a[0].text); break;
-          case a[1].value !=0: this.getNewArray(a[1].text); break;
-          case a[2].value !=0: this.getNewArray(a[2].text); break;
-        }
+      let a = []
+      if (event[0].value !== 0){this.searchData.position = event[0].text}else {this.searchData.position=null;}
+      if (event[1].value !== 0){this.searchData.scenic = event[1].text}else {this.searchData.scenic=null;}
+      if (event[2].value !== 0){this.searchData.star = event[2].text}else {this.searchData.star=null;}
+      if (event[3].value !== 0){this.searchData.orderType = event[3].value}else {this.searchData.orderType=0;}
+
+      if (event[0].value !== 0 || event[1].value !== 0 || event[2].value !== 0 || event[3].value !== null){
+        a = this.search(scenicData, this.searchData)
+        this.list = a
+        this.scenicLength = a.length
+        // console.log(this.searchData);
       }
-      // console.log(event)
+      
     }
+  },
+  computed: {
+    showNodata () {
+      return this.scenicLength === 0
+    }
+  },
+  created() {
+    this.$parent.scenicList = this.takePrice(scenicData).concat()
+    // console.log(this.takePrice (scenicData))
   },
   /* 注册组件 */
   components: {
@@ -132,7 +188,7 @@ const pageOne = {
   },
   template: `
   <div>
-    <base-go-back></base-go-back>
+  <!-- <base-go-back></base-go-back> -->
     <search-box></search-box>
     <header class="header-box">
       <title-nav @click="takeTitleValue($event)"></title-nav>
@@ -158,9 +214,14 @@ const pageOne = {
           :product-score="item['product_score']"
           :evaluate-count="item['evaluate_coun']"
           :hot="item['hot']"
+          :price="item['price']"
           @click="goToInfo(index)"
           >
           </scenic-card>
+          <div v-show="showNodata" class="no-data-box">
+            <img src="../source/images/noinfo.png" />
+            <p class="text--grey m-t-20" style="fontSize:12px">无相关数据</p>
+          </div>
       </van-list>
     </main>
   </div>

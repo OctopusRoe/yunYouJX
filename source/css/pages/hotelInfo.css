@@ -69,8 +69,11 @@
   width: 90%;
   height: auto;
   justify-self: center;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 20px;
+  font-family: Microsoft YaHei;
+  color: #757575;
+  line-height: 25px;
 }
 
 .hotel-collect-box{

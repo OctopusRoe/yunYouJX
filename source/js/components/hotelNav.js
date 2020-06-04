@@ -31,8 +31,22 @@ const hotelNav ={
       ]
     }
   },
+  methods: {
+    /* 把参数传递给父组件 */
+    takeNavValue() {
+      const a = this.takeValue()
+      this.$emit('click', a)
+    },
+    /* 设置要传递给父组件的参数 */
+    takeValue () {
+      let b = []
+      b[0] = this.hotelType.filter(item => item.value === this.hotelTypeNum)[0]
+      b[1] = this.position.filter(item => item.value === this.positionNum)[0]
+      return b
+    }
+  },
   template: `
-  <nav class="main-nav" direction="down">
+  <nav class="main-nav" direction="down" @click="takeNavValue()">
     <van-dropdown-menu active-color="#4fcaad">
       <van-dropdown-item v-model="hotelTypeNum" :options="hotelType"/>
       <van-dropdown-item v-model="positionNum" :options="position"/>
