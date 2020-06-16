@@ -54,4 +54,10 @@
 @import './pages/hotelInfo.css';
 
 /* 引入 searchPage 页面样式 */
-@import './pages/searchPage.css'
+@import './pages/searchPage.css';
+
+/* 引入 indexPage 页面样式 */
+@import './pages/indexPage.css';
+
+/* 引入 font2 样式 */
+@import './font2/iconfont.css'

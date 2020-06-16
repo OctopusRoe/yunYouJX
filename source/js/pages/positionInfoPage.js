@@ -59,13 +59,15 @@ const positionInfoPage = {
     /* 处理服务设施数据 */
     serviceInfo () {
       let b = []
-      const a = JSON.parse(this.positionScenic.label_service_info)
-      a.forEach(item => {
+      if(this.positionScenic.label_service_info !== '' && this.positionScenic.label_service_info !== null){
+        const a = JSON.parse(this.positionScenic.label_service_info)
+        a.forEach(item => {
         const c = {}
         c.labelName = item.labelName
         c.labelIcon = 'http://www.yyjxcloud.com/' + item.labelIcon
         b.push(c)
       })
+      }
       return b
     },
     /* 收藏的控制按钮 */
@@ -133,11 +135,12 @@ const positionInfoPage = {
         </div>
 
         <div class="po-title-card">
+          <!--
           <div @click="playUseful()">
             <img src="../source/images/jingdian/strategy.png"/>
             <p class="m-l-5">游玩攻略</p>
           </div>
-
+          -->
           <!--
             <div @click="develop">
               <img src="../source/images/jingdian/heat.png"/>
@@ -151,22 +154,22 @@ const positionInfoPage = {
           <strong class="m-l-10">景点介绍</strong>
         </div>
         
-        <div class="po-scenic-allinfo m-t-40" @click="gotoInfoPage()">
+        <div class="po-scenic-allinfo m-t-20" @click="gotoInfoPage()">
           <div class="m-l-20">
             <span>景点地址</span>
-            <div class="van-ellipsis"><p>请咨询景区</p></div>
+            <div class="show--text m-l-5"><p>请咨询景区</p></div>
           </div>
           <div class="m-l-20">
             <span>开放时间</span>
-            <div class="van-ellipsis"><p>{{positionScenic.business_hours}}</p></div>
+            <div class="show--text m-l-5"><p>{{positionScenic.business_hours}}</p></div>
           </div>
           <div class="m-l-20">
             <span>优惠政策</span>
-            <div class="van-ellipsis"><p>{{positionScenic.favoured_policy}}</p></div>
+            <div class="show--text m-l-5"><p>{{positionScenic.favoured_policy}}</p></div>
           </div>
           <div class="m-l-20">
             <span>交通信息</span>
-            <div class="van-ellipsis"><p>{{positionScenic.traffic_detail_info}}</p></div>
+            <div class="show--text m-l-5"><p>{{positionScenic.traffic_detail_info}}</p></div>
           </div>
           <div class="m-l-20">
             <span>服务设施</span>

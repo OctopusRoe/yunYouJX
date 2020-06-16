@@ -25,7 +25,9 @@ const app = new Vue({
       /* 保存的索引 */
       hotelListIndex: null,
       /* 永久带房间的数组 */
-      hotelList: []
+      hotelList: [],
+      /* 酒店页面 */
+      page: 1,
     }
   },
   methods: {

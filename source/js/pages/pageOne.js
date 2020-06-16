@@ -61,8 +61,9 @@ const pageOne = {
       setTimeout(() => {
         if (this.list.length < this.scenicLength) {
           for (let i = 0; i < 5; i++) {
-            this.list.push(this.scenicList.shift())
-            
+            if(this.scenicLength.length !== 0){
+              this.list.push(this.scenicList.shift())
+            }
           }
         }
         // 加载状态结束
@@ -187,7 +188,7 @@ const pageOne = {
     'base-go-back': baseGoBack
   },
   template: `
-  <div>
+  <div style="width:100%">
   <!-- <base-go-back></base-go-back> -->
     <search-box></search-box>
     <header class="header-box">

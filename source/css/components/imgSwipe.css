@@ -42,10 +42,9 @@
   align-items: center;
   border-radius: 12.5px;
 }
-.img-swipe .img-index-box img{
-  width: 12px;
-  height: 12px;
+.img-swipe .img-index-box div{
   margin-left: 10px;
+  color: #ffffff;
 }
 .img-swipe .img-index-box p{
   margin-left: 3px;

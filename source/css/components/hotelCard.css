@@ -42,10 +42,13 @@
   width: 10rem;
   display: flex;
   justify-content: start;
+  align-content: center;
 }
 .hotel-card-postiion p{
   font-size: 12px;
 }
-.hotel-card-postiion img{
-  width: 12px;
+.hotel-card-postiion div{
+  color: #BDBDBD;
+  width: 15px;
+  height: 15px;
 }

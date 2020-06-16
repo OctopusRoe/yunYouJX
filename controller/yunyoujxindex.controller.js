@@ -1,26 +1,20 @@
-/* 景区的 js control 文件 */
+/* 入口页面的 controller 文件 */
 
 /* 加载 vant lazyload 组件 */
 Vue.use(vant.Lazyload);
 
-/* 注册 vue-router 地址 */
 const routes = [
-  {path: '/', redirect: 'pageOne'},
-  {path: '/pageOne', name: 'pageOne', component: pageOne},
+  {path: '/', redirect: 'index'},
+  {path: '/index', name: 'index', component: indexPage},
   {path: '/positionInfoPage', name: 'positionInfoPage', component: positionInfoPage},
-  {path: '/playUseful', name: 'playUseful', component: playUseful},
-  {path: '/commentPage', name: 'commentPage', component: commentPage},
-  {path: '/addComment', name: 'addComment', component: addComment},
   {path: '/searchPage', name: 'searchPage', component: searchPage},
   {path: '/scenicInfoPage', name: 'scenicInfoPage', component: scenicInfoPage}
 ]
 
-/* 注册 vue-router 实例 */
 const router = new VueRouter({
   routes: routes
 })
 
-/* 全局 Vue 实例  */
 const app = new Vue({
   data() {
     return {
@@ -35,7 +29,7 @@ const app = new Vue({
       /* 风景数据查询中间数据 */
       middleList: null,
       /* 景点页面 */
-      page: 0,
+      page: 2,
     }
   },
   methods: {

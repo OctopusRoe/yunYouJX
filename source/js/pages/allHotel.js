@@ -51,10 +51,9 @@ const allHotel = {
     /* **************************************************** */
     /* 得到酒店数组 */
     setHotelData () {
-      let hotels = JSLINQ(hotelData).Where(item => item.bus_type === 3).toArray()
-      let hfids = JSLINQ(hotelData).Where(item => item.bus_type === 3).Select(item=>item.hf_id).toArray()
+      let hotels = JSLINQ(hotelData).Where(item => item.bus_type === '3').toArray()
+      let hfids = JSLINQ(hotelData).Where(item => item.bus_type === '3').Select(item=>item.hf_id).toArray()
       let hotelRooms = JSLINQ(hotelRoom).Where(item => hfids.indexOf(item.hf_id) > -1).toArray()
-      
       hotels.forEach(item => {
         let t = JSLINQ(hotelRooms).Where(x=> x.hf_id === item.hf_id).toArray()
         if (t.length === 0){
@@ -63,6 +62,7 @@ const allHotel = {
           item.rooms = t
         }
       });
+      console.log(hotelData)
       return hotels
     },
     /* 查询方法 */

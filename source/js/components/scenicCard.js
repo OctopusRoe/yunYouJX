@@ -25,7 +25,7 @@ const scenicCard = {
   methods: {
     /* 判断是否显示价格的方法 */
     showPrice () {
-      if(this.price === -1) return false
+      if(this.price === -1 || this.price === 0) return false
       else return true 
     },
     /* 是否显示 shortInfo 的方法 */
@@ -50,7 +50,7 @@ const scenicCard = {
       if (this.description === null) {
         return a
       } else {
-        a = this.description.split(',')
+        a = this.description.split(',')[0]
         return a
       }
     },
@@ -94,7 +94,8 @@ const scenicCard = {
         <p v-if="showShortInfo" class="m-t-5 show--text">{{shortInfo}}</p>
         <div class="tag-box">
           <base-tag v-if="showLeaveTag" class="m-r-5 m-t-5" :title='levelTag' color='green'></base-tag>
-          <base-tag v-if="showTagLIst" class="m-t-5" v-for="(item,index) in tagList" :title='item' :key='index' color='other'></base-tag>
+          <!--<base-tag v-if="showTagLIst" class="m-t-5" v-for="(item,index) in tagList" :title='item' :key='index' color='other'></base-tag>-->
+          <base-tag v-if="showTagLIst" class="m-t-5" :title='tagList' color='other'></base-tag>
         </div>
         <div class="position-tag m-t-5">
           <p class="">{{areaName}}</p>

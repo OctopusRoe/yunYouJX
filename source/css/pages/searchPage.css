@@ -2,6 +2,13 @@
   width: 100%;
 }
 .search-page-box .search-page-main{
-  width: 80%;
-  margin-left: 50px;
+  width: 100%;
+}
+.search-page-input{
+  width: 95%;
+}
+.search-page-main-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -1,0 +1,55 @@
+.index-page-box{
+  width: 100%;
+}
+.index-page-box .index-page-header{
+  width: 100%;
+}
+.index-page-box .index-page-header .index-page-header-p-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  letter-spacing: 10px;
+  font-weight: 600;
+}
+.index-page-box .index-page-main-box{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.index-button-box{
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  justify-items: center;
+  align-items: center;
+}
+.index-button-box div a{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+.index-button-box div a img{
+  width: 70px;
+}
+.index-grey-box{
+  width: 100%;
+  height: 10px;
+  background-color: #EEEEEE;
+}
+.index-list-box{
+  width: 100%;
+}
+.index-list-box-p{
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+.index-list-box a{
+  text-decoration: none;
+  color: #333;
+}

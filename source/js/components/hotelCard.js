@@ -39,7 +39,7 @@ const hotelCard = {
         <strong>{{title}}</strong>
       </div>
       <div class="hotel-card-postiion m-t-5">
-        <img src="../source/images/jingdian/location.png" />
+        <div><div class="iconfont icon-didian"></div></div>
         <p class="text--grey--darken m-l-5">{{areaNames}}</p>
       </div>
     </div>

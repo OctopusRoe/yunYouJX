@@ -15,13 +15,16 @@ const scenicInfoPage = {
     /* 处理服务设施数据 */
     serviceInfo () {
       let b = []
-      const a = JSON.parse(this.positionScenic.label_service_info)
-      a.forEach(item => {
+      if(this.positionScenic.label_service_info !== '' && this.positionScenic.label_service_info !== null){
+        console.log(1)
+        const a = JSON.parse(this.positionScenic.label_service_info)
+        a.forEach(item => {
         const c = {}
         c.labelName = item.labelName
         c.labelIcon = 'http://www.yyjxcloud.com/' + item.labelIcon
         b.push(c)
       })
+      }
       return b
     },
     /* 处理其他信息 */

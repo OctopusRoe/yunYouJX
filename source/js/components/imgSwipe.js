@@ -19,7 +19,7 @@ const imgSwipe = {
           <p class="m-t-5">{{weather}}</p>
         </div>
         <div class="img-index-box">
-          <img src="../source/images/jingdian/img.png"/>
+          <div class="iconfont icon-image"></div>
           <p>1/{{images.length}}</p>
         </div>
       </div>

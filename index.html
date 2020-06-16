@@ -7,13 +7,45 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
   <title>云游江西</title>
-  <link rel="stylesheet" href="./source/css/app.css">
+  <link rel="stylesheet" href="./source/css/vant.css">
+  <link rel="stylesheet" href="./source/css/index.css">
+  <link rel="stylesheet" href="./source/css/font/iconfont.css">
 </head>
 <body>
-  <div class="content marginTop54">  
-    <div class="item"><a href="./view/scenic.html"><button class="important-button">旅游景点查询</button></a></div>
-    <div class="marginTop54"><a href="./view/hotel.html"><button class="important-button">酒店查询</button></a></div>
+  <div id="app">
+    <router-view></router-view>
   </div>
+<!-- vue组件script引入 -->
+<script src="./source/js/vue.js"></script>
+<script src="./source/js/vue-router.js"></script>
+<script src="./source/js/vant.min.js"></script>
+
+<!-- jslinq 组件引入 -->
+<script src="./source/js/JSLINQ.js"></script>
+
+<!-- 引入数据 -->
+<script src="./entity/cloud_jiangxi_bus_product.js"></script>
+<script src="./entity/pricedata.js"></script>
+
+<!-- components 组件引入 -->
+<script src="./source/js/components/baseGoBack.js"></script>
+<script src="./source/js/components/hotelCard.js"></script>
+
+<script src="./source/js/components/smallTag.js"></script>
+<script src="./source/js/components/hotTag.js"></script>
+<script src="./source/js/components/scenicCard.js"></script>
+<script src="./source/js/components/imgSwipe.js"></script>
+<script src="./source/js/components/positionInfoTitle.js"></script>
+
+<!-- pages 页面引入 -->
+<script src="./source/js/pages/indexPage.js"></script>
+<script src="./source/js/pages/positionInfoPage.js"></script>
+<script src="./source/js/pages/searchPage.js"></script>
+<script src="./source/js/pages/scenicInfoPage.js"></script>
+
+<!-- 引入控制文件 -->
+<script src="./controller/yunyoujxindex.controller.js"></script>
 </body>
 </html>
